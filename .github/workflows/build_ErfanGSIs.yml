@@ -55,17 +55,16 @@ jobs:
          run: |
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
               mkdir upload
-              7za a -t7z -r GSI.7z ./*
-              if [[ $(du -sb "GSI.7z" | awk '{print $1}') -gt 2097152000 ]];then
+              zip -r GSI.zip ./*
+              if [[ $(du -sb "GSI.zip" | awk '{print $1}') -gt 2097152000 ]];then
                   echo -e "split packaging..."
-                  tar -cpzf - "GSI.7z" | split -d -b 1024m - "upload/GSI.7z"
+                  tar -cpzf - "GSI.zip" | split -d -b 1024m - "upload/GSI.zip"
               else
-                  mv GSI.7z upload/GSI.7z
+                  mv GSI.zip upload/
               fi
               ls "upload"                  
               
        - name: Upload SGSI to action-release...
-         if: env.upload_action-gh-release == 'true'
          uses: ncipollo/release-action@v1.8.6
          with:
            artifacts: ${{ github.workspace }}/ErfanGSIs/output/upload/*
