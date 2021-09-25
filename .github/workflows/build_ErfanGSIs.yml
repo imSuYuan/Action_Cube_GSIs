@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: http://bigota.d.miui.com/20.4.27/miui_MIMIX3_20.4.27_8f7879221b_10.0.zip
-  ROM_NAME: MIUI
+  ROM_URL: https://hz6zybpk.v1d.szbdyd.com:9305/fsa167af8c.a.bdydns.com/1435501072/Firmware/Flyme/m2192/9.2.1.0/cn/20210917102830/91c61c86/update.zip?f_ver=v1&max_age=7776000&r=Ii0DEzBwbH4VHBMIRTAbJGQ0Ego5P20yHBhOI1sjBDYrKxJMBSY6PBZaDFcDaFtuc3dFTXJkc34QG05XAmNYcXNoQFJzeHtiQ1pYVFFnWCJyb1gWMy4iJRZbGwxCJSkSDSAuLWAcBQQLUTUHcA%3D%3D&xysc=1&xy_rid=3CHvbNjW8VQa4m
+  ROM_NAME: Generic
   BUILD_TYPE: ab
   TZ: Asia/Shanghai
 
@@ -64,13 +64,9 @@ jobs:
               fi
               ls "upload"                  
               
-       - name: Upload SGSI to action-release...
-         uses: ncipollo/release-action@v1.8.6
-         with:
-           artifacts: ${{ github.workspace }}/ErfanGSIs/output/upload/*
-           name: ErfanGSIs-${{ env.ROM_NAME }}-${{ env.BUILD_TYPE }}
-           tag: ErfanGSIs-${{ env.ROM_NAME }}-${{ env.BUILD_TYPE }}-${{ github.run_number }}
-           token: ${{ secrets.GITHUB_TOKEN }}
-
-         
+       - name: Upload GSI to WeTransfer
+         run: |
+              cd $GITHUB_WORKSPACE/ErfanGSIs/output
+              curl -sL https://git.io/file-transfer | sh
+              ./transfer wet ./final/GSI.zip
             
