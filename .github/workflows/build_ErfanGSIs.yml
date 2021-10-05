@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://media-gdgz-person.gdoss.xstore.ctyun.cn/PERSONCLOUD/31b209d3-82fa-4d84-a283-adfa71973b78.zip?x-amz-CLIENTTYPEIN=UNKNOWN&AWSAccessKeyId=B12spNbFIkHcJjk5MvKN&x-amz-UID=504846639&x-amz-APPID=828221&response-content-disposition=attachment%3Bfilename%3D%22LON-AL00_HarmonyOS2.0.0.55-OTA.zip%22&x-amz-CLIENTNETWORK=UNKNOWN&x-amz-CLOUDTYPEIN=PERSON&x-amz-limit=rate%3D10240%2Cconcurrency%3D10&Signature=ND3D%2BgL6V%2BnQMjiCp0EJ5cvtRe4%3D&x-amz-SHID=1144911337481&Expires=1633305154&x-amz-FSIZE=6849989931&x-amz-UFID=71490114443046602
-  ROM_NAME: Generic
+  ROM_URL: https://firmware.meizu.com/Firmware/Flyme/16xs/8.20.6.30/cn_beta/20200715101736/f31452ed/update.zip
+  ROM_NAME: Flyme
   BUILD_TYPE: ab
   TZ: Asia/Shanghai
 
