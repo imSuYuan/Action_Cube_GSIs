@@ -14,8 +14,8 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://firmware.meizu.com/Firmware/Flyme/16xs/8.20.6.30/cn_beta/20200715101736/f31452ed/update.zip
-  ROM_NAME: flyme
+  ROM_URL: https://bigota.d.miui.com/V12.5.1.0.QDTCNXM/miui_MI8Lite_V12.5.1.0.QDTCNXM_c02c6bcfb0_10.0.zip
+  ROM_NAME: miui
   BUILD_TYPE: ab
   TZ: Asia/Shanghai
 
