@@ -50,7 +50,13 @@ jobs:
          run: |
              cd $GITHUB_WORKSPACE/ErfanGSIs
              sudo bash ./url2GSI.sh -c --$BUILD_TYPE $ROM_URL $ROM_NAME
-       
+       - name: Prepare Files to Make Patch
+
+         run: |
+
+          zip -r Prepare_patch.zip ErfanGSIs/working/vendor/app/* ErfanGSIs/working/vendor/bin/* ErfanGSIs/working/vendor/etc/* ErfanGSIs/working/vendor/lib/* ErfanGSIs/working/vendor/lib64/* ErfanGSIs/working/vendor/overlay/*
+
+          sudo mv Prepare_patch.zip ErfanGSIs/output/
        - name: Zip GSI  
          run: |
               cd $GITHUB_WORKSPACE/ErfanGSIs/output
