@@ -15,7 +15,7 @@ on:
     
 env:
   ROM_URL: https://firmware.meizu.com/Firmware/Flyme/meizu18X/9.2.3.0/cn/20210925181916/148ed2ee/update.zip
-  ROM_NAME: Gender
+  ROM_NAME: Generic
   BUILD_TYPE: ab
   TZ: Asia/Shanghai
 
